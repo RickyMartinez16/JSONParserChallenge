@@ -35,8 +35,8 @@ function validateJSON(inputString) {
         if (validateSimpleJSONObject(jsonObject) || Array.isArray(jsonObject))  { //if valid json obejct and not null print success
             console.log("Valid JSON object or array.");
             process.exit(0);
-        } else { //if not valid json object or null print fail
-            console.log("Invalid JSON object: Not a JSON object.");
+        } else { //if not valid json object or array or null print fail
+            console.log("Invalid JSON object: Not a JSON object or array.");
             process.exit(1);
         }
     } catch (error) { //if not valid json and cannot parse
