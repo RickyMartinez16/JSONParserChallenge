@@ -1,11 +1,18 @@
 const fs = require('fs'); //allows you to interact with the file system
 
-//helper fucntion to check if each value is a valid string, number, bool or null
-function isValidValue(value) { 
-    return typeof value === 'string' ||
-           typeof value === 'number' ||
-           typeof value === 'boolean' ||
-           value === null;
+//helper fucntion to check if each value is a valid string, number, bool or null. also checks if arrays have valid values and objects recursively validates object strcutre
+function isValidValue(value) {
+    if (typeof value === 'string' || 
+        typeof value === 'number' || 
+        typeof value === 'boolean' || 
+        value === null) {
+        return true;
+    } else if (Array.isArray(value)) {
+        return value.every(isValidValue);
+    } else if (typeof value === 'object') {
+        return validateSimpleJSONObject(value);
+    }
+    return false;
 }
 
 function validateSimpleJSONObject(jsonObject) {
