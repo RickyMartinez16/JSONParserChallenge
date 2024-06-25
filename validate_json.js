@@ -1,8 +1,11 @@
 const fs = require('fs'); //allows you to interact with the file system
 
 
-function isString(value) { //checks if value is a string
-    return typeof value === 'string' || value instanceof String;
+function isValidValue(value) {
+    return typeof value === 'string' ||
+           typeof value === 'number' ||
+           typeof value === 'boolean' ||
+           value === null;
 }
 
 function validateSimpleJSONObject(jsonObject) {
