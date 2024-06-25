@@ -25,7 +25,7 @@ function validateSimpleJSONObject(jsonObject) {
 function validateJSON(inputString) {
     try {
         const jsonObject = JSON.parse(inputString); //parse input into a javascript obect
-        if (validateSimpleJSONObject(jsonObject)) { //if valid json obejct and not null print success
+        if (isValidValue(jsonObject)) { //if valid json obejct and not null print success
             console.log("Valid JSON object.");
             process.exit(0);
         } else { //if not valid json object or null print fail
