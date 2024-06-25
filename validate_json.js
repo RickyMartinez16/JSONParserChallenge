@@ -1,7 +1,7 @@
 const fs = require('fs'); //allows you to interact with the file system
 
-
-function isValidValue(value) {
+//helper fucntion to check if each value is a valid string, number, bool or null
+function isValidValue(value) { 
     return typeof value === 'string' ||
            typeof value === 'number' ||
            typeof value === 'boolean' ||
