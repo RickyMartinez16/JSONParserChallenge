@@ -14,8 +14,8 @@ function validateSimpleJSONObject(jsonObject) {
         return false;
     }
     for (const key in jsonObject) {
-        //check if the type of each key is not a string and each value is not a string
-        if (typeof key !== 'string' || !isString(jsonObject[key])) {
+        //check if the type of each key is not a string and each value is not valid value (string, number, boolean)
+        if (typeof key !== 'string' || !isValidValue(jsonObject[key])) {
             return false;
         }
     }
@@ -25,7 +25,7 @@ function validateSimpleJSONObject(jsonObject) {
 function validateJSON(inputString) {
     try {
         const jsonObject = JSON.parse(inputString); //parse input into a javascript obect
-        if (isValidValue(jsonObject)) { //if valid json obejct and not null print success
+        if (validateSimpleJSONObject(jsonObject)) { //if valid json obejct and not null print success
             console.log("Valid JSON object.");
             process.exit(0);
         } else { //if not valid json object or null print fail
