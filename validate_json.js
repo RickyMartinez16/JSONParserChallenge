@@ -14,7 +14,7 @@ function validateSimpleJSONObject(jsonObject) {
         return false;
     }
     for (const key in jsonObject) {
-        //check if the type of each key is not a string and each value is not valid value (string, number, boolean)
+        //if the type of each key in the jsonObject is not a string or the value for each key is not a valid value return false
         if (typeof key !== 'string' || !isValidValue(jsonObject[key])) {
             return false;
         }
