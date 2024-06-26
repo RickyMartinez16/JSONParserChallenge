@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs'); //allows you to interact with the file system
 
 function validateJSON(inputString) {
     try {
