@@ -40,7 +40,7 @@ if (process.argv.length !== 3) { //makes sure the command line args are run corr
     process.exit(1);
 }
 
-const inputFile = process.argv[2]; //gets the input file from the array (process.argv)
+const inputFile = process.argv[2]; //gets the input file from the comand life args array (process.argv)
 
 fs.readFile(inputFile, 'utf8', (err, data) => { //reads the file
     if (err) {
