@@ -3,7 +3,7 @@ const fs = require('fs'); //allows you to interact with the file system
 function validateJSON(inputString) {
     try {
         const jsonObject = JSON.parse(inputString); //parse string into a javascript obect
-        if (typeof jsonObject === 'object' && jsonObject !== null) {
+        if (typeof jsonObject === 'object' && jsonObject !== null) { //if valid json obejct and not null print success
             console.log("Valid JSON object.");
             process.exit(0);
         } else {
