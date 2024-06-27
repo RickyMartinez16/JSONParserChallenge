@@ -10,7 +10,7 @@ function validateJSON(inputString) {
             console.log("Invalid JSON object: Not a JSON object.");
             process.exit(1);
         }
-    } catch (error) {
+    } catch (error) { //if not valid json and cannot parse
         console.log("Invalid JSON object: JSONDecodeError.");
         process.exit(1);
     }
