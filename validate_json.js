@@ -16,7 +16,7 @@ function validateJSON(inputString) {
     }
 }
 
-if (process.argv.length !== 3) {
+if (process.argv.length !== 3) { //makes sure the command line args are run correctly
     console.log("Usage: node validate_json.js <input_file>");
     process.exit(1);
 }
