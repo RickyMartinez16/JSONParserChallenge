@@ -23,7 +23,7 @@ if (process.argv.length !== 3) { //makes sure the command line args are run corr
 
 const inputFile = process.argv[2]; //gets the input file from the array (process.argv)
 
-fs.readFile(inputFile, 'utf8', (err, data) => {
+fs.readFile(inputFile, 'utf8', (err, data) => { //reads the file
     if (err) {
         console.error(`Error reading file: ${err.message}`);
         process.exit(1);
