@@ -6,7 +6,7 @@ function validateJSON(inputString) {
         if (typeof jsonObject === 'object' && jsonObject !== null) { //if valid json obejct and not null print success
             console.log("Valid JSON object.");
             process.exit(0);
-        } else {
+        } else { //if not valid json object or null print fail
             console.log("Invalid JSON object: Not a JSON object.");
             process.exit(1);
         }
